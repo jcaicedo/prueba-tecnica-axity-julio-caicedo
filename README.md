@@ -1,5 +1,17 @@
 # PRUEBA TECNICA AXITY JULIO CAICEDO
 
+### `Descripción de la prueba y consideraciones`
+
+- Creación de un componente Card para la renderización de información horaria de tiendas.
+- Creación de un Estado de Tienda usando Context API para manejar los estados (open, closed, close soon)
+- Dado que no hay especificicaciones del manejo de estados dinámicos en la descripción de la prueba, se hace una actualización automatica cada hora.
+- Como parte de las validaciones, se agrego que tanto la hora como los días coincidieran con el cálculo para determinar el estado. 
+-- Como mejora, se pudiera tomar la primera vez la hora más cercana de cierre y mantener mediante useRef el calculo programado del archivo json, para la actuliación automatica de los estados. 
+- En el json de data proporcionado habian elementos con acento, como recomendación los quitamos para un mejor desarrollo.
+- Dado que el Context creado envuelve al App.jsx, en el archivo Card.test.js se ha envuelto también la rederización para su correcto funcionamiento.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -33,14 +45,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-
-### `Descripción de la prueba y consideraciones`
-
-- Creación de un componente Card para la renderización de información horaria de tiendas.
-- Creación de un Estado de Tienda usando Context API para manejar los estados (open, closed, close soon)
-- Dado que no hay especificicaciones del manejo de estados dinámicos en la descripción de la prueba, se hace una actualización automatica cada hora.
-- Como parte de las validaciones, se agrego que tanto la hora como los días coincidieran con el cálculo para determinar el estado. 
--- Como mejora, se pudiera tomar la primera vez la hora más cercana de cierre y mantener mediante useRef el calculo programado del archivo json, para la actuliación automatica de los estados. 
-- En el json de data proporcionado habian elementos con acento, como recomendación los quitamos para un mejor desarrollo.
-- Dado que el Context creado envuelve al App.jsx, en el archivo Card.test.js se ha envuelto también la rederización para su correcto funcionamiento.
 
