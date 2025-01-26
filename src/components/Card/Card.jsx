@@ -1,8 +1,16 @@
-/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types'
 import styles from './Card.module.scss'
 import * as assets from "../../assets";
 import { useHourlyStatuses } from '../../context/HourlyStatusContext';
+
+const horarioPropTypes = PropTypes.shape({
+    dia: PropTypes.string.isRequired,
+    inicio: PropTypes.string.isRequired,
+    fin: PropTypes.string.isRequired
+});
+
+
+const Icon = ({ src, alt }) => <img src={src} alt={alt} className="icon_location" />;
 
 const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) => {
 
@@ -24,7 +32,7 @@ const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) 
                 </div>
 
                 <div className="card_location_content">
-                    <img src={assets.map} alt={`${title} location`} className="icon_location" />
+                <Icon src={assets.map} alt={`${title} location`} />
                     <p className="card_text_location">{ubicacion}</p>
                 </div>
 
@@ -56,11 +64,7 @@ Card.propTypes = {
     logo: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     ubicacion: PropTypes.string.isRequired,
-    horario: PropTypes.shape({
-        dia: PropTypes.string.isRequired,
-        inicio: PropTypes.string.isRequired,
-        fin: PropTypes.string.isRequired,
-    }).isRequired,
+    horario: horarioPropTypes.isRequired,
     labelLink: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired
 };
