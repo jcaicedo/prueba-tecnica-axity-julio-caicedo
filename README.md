@@ -7,8 +7,8 @@
 - Dado que no hay especificicaciones del manejo de estados dinámicos en la descripción de la prueba, se hace una actualización automatica cada hora.
 - Como parte de las validaciones, se agrego que tanto la hora como los días coincidieran con el cálculo para determinar el estado. 
 -- Como mejora, se pudiera tomar la primera vez la hora más cercana de cierre y mantener mediante useRef el calculo programado del archivo json, para la actuliación automatica de los estados. 
-- En el json de data proporcionado habian elementos con acento, como recomendación los quitamos para un mejor desarrollo.
-- Dado que el Context creado envuelve al App.jsx, en el archivo Card.test.js se ha envuelto también la rederización para su correcto funcionamiento.
+- En el json de data proporcionado habian elementos con acento, como recomendación se quitaron para un mejor desarrollo.
+- Dado que el Context creado envuelve al index.js, en el archivo Card.test.js se ha envuelto también la rederización para su correcto funcionamiento.
 
 
 
