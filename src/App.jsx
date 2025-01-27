@@ -7,7 +7,9 @@ function App() {
   const { loading } = useHourlyStatuses(cardData);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading-overlay">
+    <div className="loading-message">Loading...</div>
+  </div>
   }
 
   return (
@@ -16,7 +18,7 @@ function App() {
         <div className="cards">
           {cardData.map((card) => (
             <Card
-            {...card} key={card.id}
+              {...card} key={card.id}
             />
           ))}
         </div>
