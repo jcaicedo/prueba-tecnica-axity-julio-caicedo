@@ -20,12 +20,15 @@ $state-colors: (
 // Functions
 @function state-color($state, $type: "background") {
   @if map.has-key($state-colors, $state) {
-    @if $type == "background" {
+    @if $type =="background" {
       @return list.nth(map.get($state-colors, $state), 1);
-    } @else if $type == "text" {
+    }
+
+    @else if $type =="text" {
       @return list.nth(map.get($state-colors, $state), 2);
     }
   }
+
   @return null;
 }
 
@@ -96,6 +99,9 @@ $state-colors: (
           height: 60px;
           border: 2px solid $color-primary;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          border-radius: 12px;
+          padding: 7px;
+          background-color: white;
         }
       }
 

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import styles from './Card.module.scss'
 import * as assets from "../../assets";
 import { useHourlyStatuses } from '../../context/HourlyStatusContext';
 
@@ -14,7 +13,7 @@ const Icon = ({ src, alt }) => <img src={src} alt={alt} className="icon_location
 
 const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) => {
 
-    const {hourStatuses} = useHourlyStatuses();
+    const { hourStatuses } = useHourlyStatuses();
     const stateHour = hourStatuses[id] || "closed";
 
 
@@ -23,7 +22,10 @@ const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) 
         <div className="card_item">
             <div className="card_banner_container">
                 <img src={banner} alt={`${title} banner`} className="card_banner" />
+
                 <img src={logo} alt={`${title} logo`} className="card_logo" />
+
+
             </div>
 
             <div className="card_body">
@@ -32,7 +34,7 @@ const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) 
                 </div>
 
                 <div className="card_location_content">
-                <Icon src={assets.map} alt={`${title} location`} />
+                    <Icon src={assets.map} alt={`${title} location`} />
                     <p className="card_text_location">{ubicacion}</p>
                 </div>
 
@@ -50,7 +52,7 @@ const Card = ({ id, title, banner, logo, ubicacion, horario, link, labelLink }) 
                 </div>
 
                 <div className="card_more_info">
-                    <a href={link} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    <a href={link} target="_blank" rel="noopener noreferrer" >
                         {labelLink}
                     </a>
                 </div>
